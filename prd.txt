@@ -1,0 +1,5 @@
+Main Functionality
+1. Fetching comments from youtube
+2. Fetching sentiments for each comment
+
+
