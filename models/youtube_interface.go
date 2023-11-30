@@ -16,13 +16,13 @@ type YoutubeInterface interface {
 // Part Constants
 const (
 	// The `ID` that YouTube uses to uniquely identify the comment.
-	ID = "id"
+	ID string = "id"
 
 	// The `snippet` object contains basic details about the comment.
-	Snippet = "snippet"
+	Snippet string = "snippet"
 
 	// The `replies` includes replies to the base comment in the response.
-	Replies = "replies"
+	Replies string = "replies"
 )
 
 // ModerationStatus constants
@@ -30,34 +30,34 @@ const (
 	// Retrieve comment threads that are awaiting review by a moderator.
 	// A comment thread can be included in the response if the top-level comment or
 	// at least one of the replies to that comment are awaiting review.
-	HeldForReview = "heldForReview"
+	HeldForReview string = "heldForReview"
 
 	// Retrieve comment threads classified as likely to be spam.
 	// A comment thread can be included in the response if the top-level comment or
 	//  at least one of the replies to that comment is considered likely to be spam.
-	LikelySpam = "likelySpam"
+	LikelySpam string = "likelySpam"
 
 	// Retrieve threads of published comments. This is the default value.
 	// A comment thread can be included in the response if its top-level comment has been published.
-	Published = "published"
+	Published string = "published"
 )
 
 // Order constants
 const (
 	// Comment threads are ordered by time. This is the default behavior.
-	Time = "time"
+	Time string = "time"
 
 	// Comment threads are ordered by relevance.
-	Relevance = "relevance"
+	Relevance string = "relevance"
 )
 
 // TestFormat constants
 const (
 	// Returns the comments in HTML format. This is the default value.
-	Html = "html"
+	Html string = "html"
 
 	// Returns the comments in plain text format.
-	PlainText = "plainText"
+	PlainText string = "plainText"
 )
 
 type GetCommentsOptions struct {
@@ -86,7 +86,7 @@ type GetCommentsOptions struct {
 	// Optional Parametes
 
 	/* The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-	Note: This parameter must not be used in conjuction with `id` parameter.*/
+	Note: This parameter must not be used in conjuction with `id` parameter. Acceptable values are 1 to 100, inclusive. The default value is 20*/
 	MaxResults string
 
 	/* Parameter to limit the returned comment threads to a particular moderation state.

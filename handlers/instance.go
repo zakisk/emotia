@@ -7,9 +7,9 @@ import (
 
 type Handler struct {
 	logger  *zap.SugaredLogger
-	Service *models.YoutubeInterface
+	Service models.YoutubeInterface
 }
 
-func NewHandler(logger *zap.SugaredLogger, service *models.YoutubeInterface) models.HandlerInterface {
+func NewHandler(logger *zap.SugaredLogger, service models.YoutubeInterface) models.HandlerInterface {
 	return &Handler{logger: logger, Service: service}
 }

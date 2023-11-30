@@ -33,7 +33,7 @@ func main() {
 	commentThreadService := youtubeV3.NewCommentThreadsService(svc)
 	service := youtube.NewYoutubeService(commentThreadService)
 
-	h := handlers.NewHandler(logger, &service)
+	h := handlers.NewHandler(logger, service)
 	router := router.NewRouter(h)
 	//creating custom server in order to set the fields as per my requirement
 	s := &http.Server{

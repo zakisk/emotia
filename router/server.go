@@ -14,7 +14,7 @@ type Router struct {
 func NewRouter(h models.HandlerInterface) *Router {
 	router := mux.NewRouter()
 
-	router.Handle("/get-comments-emotions", h.EmotionsMiddleware(h.GetEmotions)).Methods(http.MethodGet).Queries("videoUrl", "{[a-zA-Z]}")
+	router.Handle("/get-comments-emotions", h.EmotionsMiddleware(h.GetEmotions)).Methods(http.MethodGet)
 
 	return &Router{R: router}
 }
